@@ -10,6 +10,7 @@
     "no-console": "off",
     "not-rely-on-time": "off",
     "no-inline-assembly": "off",
+    "no-empty-blocks": "off",
     "func-name-mixedcase": "off",
     "avoid-low-level-calls": "off",
     "avoid-tx-origin": "off",

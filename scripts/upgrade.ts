@@ -17,9 +17,9 @@ async function main(): Promise<void> {
   // await contract.deployed();
   // console.log("Factory upgraded to : ", await upgrades.er90c1967.getImplementationAddress(contract.address));
 
-  // await run(`verify:verify`, {
-  //   address: contract.address,
-  // });
+  await run(`verify:verify`, {
+    address: contract.address,
+  });
 }
 
 main()
