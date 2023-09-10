@@ -23,6 +23,7 @@ contract AccessoryCollectionUpgradeable is
     ERC721URIStorageUpgradeable
 {
     uint256 private _idCounter;
+    mapping(uint256 => uint256) private _types;
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
@@ -44,9 +45,14 @@ contract AccessoryCollectionUpgradeable is
         __CollectionType_init_unchained(typeInfos_);
     }
 
+    function getTokenType(uint256 tokenId) external view returns (uint256) {
+        return _types[tokenId];
+    }
+
     function safeMint(uint256 typeNFT_, address recipient_) external onlyRole(MINTER_ROLE) {
         uint256 tokenId = ++_idCounter;
         _safeMint(recipient_, tokenId);
+        _types[tokenId] = typeNFT_;
         emit AccessoryMinted(recipient_, typeNFT_, tokenId);
     }
 

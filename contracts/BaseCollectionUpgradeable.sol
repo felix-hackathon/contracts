@@ -38,6 +38,7 @@ contract BaseCollectionUpgradeable is
     using Helper for *;
 
     uint256 private _idCounter;
+    mapping(uint256 => uint256) private _types;
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
@@ -61,6 +62,10 @@ contract BaseCollectionUpgradeable is
         __CollectionType_init_unchained(typeInfos_);
     }
 
+    function getTokenType(uint256 tokenId) external view returns (uint256) {
+        return _types[tokenId];
+    }
+
     function buy(
         uint256 type_,
         CollectionPart[] calldata accessories_,
@@ -71,6 +76,7 @@ contract BaseCollectionUpgradeable is
 
         uint256 tokenId = ++_idCounter;
         _safeMint(recipient_, tokenId);
+        _types[tokenId] = type_;
 
         uint256 length = accessories_.length;
         address tba = _registry.createAccount(_implementation, block.chainid, address(this), tokenId, 0, "");
