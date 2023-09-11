@@ -106,7 +106,7 @@ async function main() {
   );
   console.log("Brake Disk: ", BrakeDiskContract.address);
 
-  //
+  // //
   const WindShieldContract = await deployAndVerify(
     "AccessoryCollectionUpgradeable",
     [roleManager, "Wind Shield", "Wind Shield", uri, types],
@@ -132,17 +132,17 @@ async function main() {
   );
   console.log("Car: ", BaseCollectionUpgradeable.address);
 
-  // const PaymentGatewayUpgradeable = await deployAndVerify(
-  //   "PaymentGatewayUpgradeable",
-  //   [roleManager],
-  //   false,
-  //   "contracts/PaymentGatewayUpgradeable.sol:PaymentGatewayUpgradeable",
-  //   {
-  //     kind: "uups",
-  //     initializer: "initialize",
-  //   },
-  // );
-  // console.log("PaymentGateway: ", PaymentGatewayUpgradeable.address);
+  const PaymentGatewayUpgradeable = await deployAndVerify(
+    "PaymentGatewayUpgradeable",
+    [roleManager],
+    false,
+    "contracts/PaymentGatewayUpgradeable.sol:PaymentGatewayUpgradeable",
+    {
+      kind: "uups",
+      initializer: "initialize",
+    },
+  );
+  console.log("PaymentGateway: ", PaymentGatewayUpgradeable.address);
 }
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.

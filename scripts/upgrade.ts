@@ -2,8 +2,8 @@ import { Contract, ContractFactory } from "ethers";
 import { ethers, run, upgrades } from "hardhat";
 
 async function main(): Promise<void> {
-  const Factory: ContractFactory = await ethers.getContractFactory("Base721Upgradeable");
-  const contract: Contract = await upgrades.upgradeProxy("0xC442E3959d5c84fC23BB415efcB1f3aab408Da76", Factory, {
+  const Factory: ContractFactory = await ethers.getContractFactory("BaseCollectionUpgradeable");
+  const contract: Contract = await upgrades.upgradeProxy("0x191EC8e3F3cb12a87F33aA9582886C424446A775", Factory, {
     kind: "uups",
   });
 
