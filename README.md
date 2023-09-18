@@ -2,7 +2,10 @@
 
 **THIS IS EXPERIMENTAL, UNAUDITED CODE --USE AT YOUR OWN RISK**
 
-Workflows: ![Alt Text](images/workflow.png)
+For the repository related to the ERC-6551 Marketplace and Auction, please refer to the
+[firefly-exchange](https://github.com/klaytnovator-hackathon/exchange) repository for more information
+
+Workflows: ![Alt Text](https://github.com/klaytnovator-hackathon/exchange/blob/main/images/shopping.png)
 
 Contracts:
 
